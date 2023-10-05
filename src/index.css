@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.home{
+  background-image:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdN6Bkx59FlNAISVMa0ezsnHd0E6Q9pCcKg&usqp=CAU');
+  background-size: cover;
+  height: auto;
+  width: auto;
+
+}
+.home-data{
+  color: white;
+  font-size: 22px;
+}
