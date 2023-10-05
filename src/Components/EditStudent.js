@@ -33,7 +33,7 @@ export default function EditStudent(){
         // console.log(changedata)
         studentDatas[changedata] = alterStudent
         setStudentDatas([...studentDatas])
-        navigate('/')
+        navigate('/student')
     }
 
 
