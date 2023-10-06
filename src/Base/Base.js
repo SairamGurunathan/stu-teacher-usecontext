@@ -1,14 +1,21 @@
-import React, { children } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function Base({children}) {
+export default function Base({ children }) {
+  const history = useNavigate();
+  const handleNavigation = (path) => {
+    history(path);
+  };
+
   return (
     <>
       <header>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               Zen School
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -23,29 +30,37 @@ export default function Base({children}) {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
+                  <button
+                    className="nav-link active"
+                    onClick={() => handleNavigation("/")}
+                  >
                     Home
-                  </a>
+                  </button>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/student">
+                  <button
+                    className="nav-link"
+                    onClick={() => handleNavigation("/student")}
+                  >
                     Student
-                  </a>
+                  </button>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/teacher">
+                  <button
+                    className="nav-link"
+                    onClick={() => handleNavigation("/teacher")}
+                  >
                     Teacher
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
       </header>
-      <div className="container"> 
-        {children}
-      </div>
+      <div className="container">{children}</div>
       <footer></footer>
     </>
   );
 }
+
