@@ -13,14 +13,15 @@ export default function EditTeacher(){
     const [address,setAddress] = useState("");
 
     const data = teacherdatas.find((teach) => teach.id === id)
-    // console.log(data)
-    useEffect(()=>(
-        setIdx(data.id),
-        setName(data.Name),
-        setClasses(data.class),
+    
+    useEffect(()=>{
+        setIdx(data.id);
+        setName(data.Name);
+        setClasses(data.class);
         setAddress(data.address)
-    ),[])
-        // console.log(id)
+        // eslint-disable-next-line
+    },[])
+        
     function editteacherdata(){
         const alterTeacher = {
             id:idx,

@@ -12,13 +12,14 @@ export default function EditStudent(){
     const [address,setAddress] = useState("");
 
     const data = studentDatas.find((user)=>user.id === id)
-    // console.log(data)
-    useEffect(()=>(
-        setIdx(data.id),
-        setName(data.Name),
-        setClasses(data.class),
-        setAddress(data.address)
-    ),[])
+    
+    useEffect(()=>{
+        setIdx(data.id);
+        setName(data.Name);
+        setClasses(data.class);
+        setAddress(data.address);
+        // eslint-disable-next-line
+    }, [])
 
     // console.log(id)
     function editdata(){
